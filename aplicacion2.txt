@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Información verificada para ayudar a las personas afectadas por el terremoto del 10 de agosto de 2026." />
+  <title>Colombia Solidaria</title>
+  <style>
+    :root{--azul:#0b3b7a;--azul2:#0756a5;--fondo:#f5f7fb;--texto:#172033;--gris:#64748b;--borde:#dbe3ee;--verde:#08775d;--rojo:#b42318;--amarillo:#f3b218;--blanco:#fff;--sombra:0 12px 30px rgba(15,34,70,.10)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--fondo);color:var(--texto)}
+    button,input,select{font:inherit}button{cursor:pointer}.oculto{display:none!important}.contenedor{width:min(1180px,calc(100% - 32px));margin:auto}
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--borde)}
+    .nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px}.marca{display:flex;align-items:center;gap:12px;font-weight:900}.logo{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:var(--azul2);color:white;font-size:23px}.marca small{display:block;color:var(--gris);font-weight:600;margin-top:2px}.navlinks{display:flex;gap:8px}.navlinks a{color:var(--texto);text-decoration:none;font-weight:700;padding:10px 12px;border-radius:10px}.navlinks a:hover{background:#eef4fb}
+    .hero{background:linear-gradient(135deg,#092b5a,#0b4a91 58%,#102138);color:white;padding:58px 0}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:38px;align-items:center}.etiqueta{display:inline-flex;gap:8px;align-items:center;border:1px solid rgba(255,255,255,.24);background:rgba(255,255,255,.1);padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800}.hero h1{font-size:clamp(38px,6vw,68px);line-height:1.02;margin:18px 0 16px;letter-spacing:-2px}.hero p{font-size:18px;line-height:1.7;color:#dbeafe;max-width:720px}.metas{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}.meta{background:rgba(255,255,255,.11);padding:10px 12px;border-radius:12px;font-size:14px}.alerta{background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.22);padding:26px;border-radius:24px;box-shadow:var(--sombra)}.alerta h2{margin:0 0 10px;font-size:22px}.alerta p{font-size:15px;margin:0}.alerta-icono{width:46px;height:46px;border-radius:14px;background:var(--amarillo);display:grid;place-items:center;color:#172033;font-size:23px;margin-bottom:18px}
+    section{padding:56px 0}.titulo-kicker{color:var(--azul2);font-size:13px;letter-spacing:1.2px;font-weight:900;text-transform:uppercase}.titulo{font-size:clamp(28px,4vw,42px);margin:6px 0 10px;letter-spacing:-1px}.subtitulo{color:var(--gris);line-height:1.65;margin:0;max-width:760px}.acciones{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:28px}.accion{border:1px solid var(--borde);background:white;border-radius:20px;padding:18px;text-align:left;box-shadow:0 4px 12px rgba(15,34,70,.05);transition:.2s}.accion:hover{transform:translateY(-4px);box-shadow:var(--sombra)}.accion .icono{width:46px;height:46px;border-radius:15px;display:grid;place-items:center;color:white;font-size:23px;margin-bottom:14px}.accion strong{display:block;font-size:15px}.accion span{display:block;color:var(--gris);font-size:12px;line-height:1.5;margin-top:5px}.naranja{background:#ed7b13}.sangre{background:#c6221f}.dinero{background:#1166b8}.persona{background:#6d3ac1}.ayuda{background:#078369}.emergencia{background:#a11229}
+    .panel{background:white;border-top:1px solid var(--borde);border-bottom:1px solid var(--borde)}.filtros{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.buscador{flex:1;min-width:260px;position:relative}.buscador input,.filtros select{width:100%;height:48px;border:1px solid #cbd5e1;border-radius:14px;background:white;padding:0 14px;outline:none}.buscador input{padding-left:43px}.buscador span{position:absolute;left:15px;top:13px}.filtros select{width:auto;min-width:210px}.buscador input:focus,.filtros select:focus{border-color:var(--azul2);box-shadow:0 0 0 4px #dbeafe}.resultados{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:26px}.tarjeta{border:1px solid var(--borde);border-radius:22px;background:white;padding:22px;box-shadow:0 5px 15px rgba(15,34,70,.05)}.tarjeta-top{display:flex;justify-content:space-between;gap:15px;align-items:flex-start}.categoria{font-size:12px;color:var(--azul2);font-weight:900;text-transform:uppercase;letter-spacing:.8px}.estado{border:1px solid #a7f3d0;background:#ecfdf5;color:#05664f;border-radius:999px;padding:6px 10px;font-size:11px;font-weight:900}.estado.actualizado{background:#eff6ff;color:#154da0;border-color:#bfdbfe}.tarjeta h3{font-size:21px;margin:9px 0}.linea{color:#526176;font-size:14px;line-height:1.55;margin:7px 0}.chips{display:flex;flex-wrap:wrap;gap:7px;margin:15px 0}.chip{background:#f1f5f9;padding:6px 9px;border-radius:999px;font-size:12px;font-weight:700}.verificacion{background:#f8fafc;border-radius:14px;padding:12px;font-size:12px;color:#536076;line-height:1.6}.botones{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}.btn{border:0;border-radius:12px;padding:10px 13px;font-weight:800;font-size:13px}.btn-principal{background:var(--azul2);color:white}.btn-secundario{border:1px solid #cbd5e1;background:white;color:var(--texto)}.btn:hover{filter:brightness(.96)}.vacio{text-align:center;padding:40px;background:#f8fafc;border:1px dashed #b7c2d0;border-radius:20px;color:var(--gris);grid-column:1/-1}
+    .didactico{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.mini{background:white;border:1px solid var(--borde);padding:24px;border-radius:22px}.mini .gran-icono{font-size:29px}.mini h3{margin:14px 0 8px}.mini p{color:var(--gris);font-size:14px;line-height:1.7}.fuentes{background:#eef5fc;border-radius:26px;padding:28px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}.fuentes ul{margin:12px 0 0;padding-left:20px;color:#475569;line-height:1.8}.fuentes a{display:inline-block;background:var(--azul);color:#fff;text-decoration:none;padding:13px 16px;border-radius:13px;font-weight:900}
+    footer{background:#09182d;color:#d9e4f2;padding:36px 0}.footer{display:flex;justify-content:space-between;gap:20px}.footer small{color:#97a9c2}.modal-fondo{position:fixed;inset:0;z-index:100;background:rgba(2,12,28,.72);display:grid;place-items:center;padding:18px}.modal{width:min(620px,100%);background:white;border-radius:26px;padding:26px;box-shadow:0 25px 70px rgba(0,0,0,.28)}.modal-top{display:flex;justify-content:space-between;gap:20px}.cerrar{border:0;background:#eef2f7;width:40px;height:40px;border-radius:12px;font-size:18px}.modal h2{margin:8px 0}.modal .detalle{background:#f8fafc;border-radius:16px;padding:15px;margin-top:14px;line-height:1.7;color:#475569}.nota{padding:12px 14px;border-radius:13px;background:#fff7dd;color:#624400;font-size:13px;margin-top:16px}
+    @media(max-width:980px){.hero-grid{grid-template-columns:1fr}.acciones{grid-template-columns:repeat(3,1fr)}.didactico{grid-template-columns:1fr}.fuentes{grid-template-columns:1fr}.resultados{grid-template-columns:1fr}}
+    @media(max-width:680px){.navlinks{display:none}.hero{padding:42px 0}.acciones{grid-template-columns:repeat(2,1fr)}.accion{padding:15px}.filtros select{width:100%}.footer{flex-direction:column}.hero h1{letter-spacing:-1px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="contenedor nav">
+      <div class="marca"><div class="logo">❤</div><div>Colombia Solidaria<small>Información verificada para ayudar</small></div></div>
+      <nav class="navlinks"><a href="#inicio">Inicio</a><a href="#ayudar">Cómo ayudar</a><a href="#puntos">Puntos</a><a href="#fuentes">Fuentes</a></nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="contenedor hero-grid">
+        <div>
+          <div class="etiqueta">✅ Información con fuente y fecha de verificación</div>
+          <h1>Ayuda por el terremoto del 10 de agosto</h1>
+          <p>Consulta puntos de acopio, donación de sangre, canales oficiales y orientación práctica para ayudar de forma segura.</p>
+          <div class="metas"><div class="meta">🕒 Actualizado: <span id="fechaGeneral"></span></div><div class="meta">🛡️ Verifica antes de desplazarte</div></div>
+        </div>
+        <aside class="alerta"><div class="alerta-icono">⚠</div><h2>Antes de salir</h2><p>Confirma el horario, revisa qué elementos recibe el punto y abre siempre la fuente oficial. La información de una emergencia puede cambiar rápidamente.</p></aside>
+      </div>
+    </section>
+
+    <section id="ayudar">
+      <div class="contenedor">
+        <div class="titulo-kicker">Elige una ruta</div><h2 class="titulo">¿Cómo quieres ayudar?</h2><p class="subtitulo">Selecciona una opción para filtrar los canales relacionados.</p>
+        <div class="acciones">
+          <button class="accion" data-filtro="Punto de acopio"><div class="icono naranja">📦</div><strong>Llevar ayuda</strong><span>Consulta qué reciben y dónde.</span></button>
+          <button class="accion" data-filtro="Donación de sangre"><div class="icono sangre">🩸</div><strong>Donar sangre</strong><span>Revisa puntos y requisitos.</span></button>
+          <button class="accion" data-filtro="Donación de dinero"><div class="icono dinero">💳</div><strong>Donar dinero</strong><span>Usa únicamente enlaces oficiales.</span></button>
+          <button class="accion" data-filtro="Reporte de desaparecidos"><div class="icono persona">🔍</div><strong>Reportar desaparecido</strong><span>Accede a canales institucionales.</span></button>
+          <button class="accion" data-filtro="Necesito ayuda"><div class="icono ayuda">🤝</div><strong>Necesito ayuda</strong><span>Encuentra orientación disponible.</span></button>
+          <button class="accion" data-filtro="Emergencias"><div class="icono emergencia">☎</div><strong>Emergencias</strong><span>Canales de atención inmediata.</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section id="puntos" class="panel">
+      <div class="contenedor">
+        <div class="titulo-kicker">Consulta rápida</div><h2 class="titulo">Puntos y canales de ayuda</h2><p class="subtitulo">Busca por ciudad, dirección, necesidad o tipo de ayuda.</p>
+        <div class="filtros"><div class="buscador"><span>🔎</span><input id="buscar" type="search" placeholder="Ejemplo: Usaquén, sangre, pañales..." aria-label="Buscar información" /></div><select id="categoria" aria-label="Filtrar por categoría"></select></div>
+        <div id="resultados" class="resultados"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="contenedor">
+        <div class="titulo-kicker">Orientación didáctica</div><h2 class="titulo">Ayudar también es verificar</h2>
+        <div class="didactico">
+          <article class="mini"><div class="gran-icono">📦</div><h3>Antes de llevar productos</h3><p>Confirma que el punto siga abierto, revisa la lista vigente y lleva los artículos limpios, cerrados y sin vencer.</p></article>
+          <article class="mini"><div class="gran-icono">🔐</div><h3>Antes de donar dinero</h3><p>Comprueba el dominio oficial. No compartas claves, contraseñas ni códigos de verificación y evita cuentas personales.</p></article>
+          <article class="mini"><div class="gran-icono">📲</div><h3>Antes de compartir</h3><p>Revisa la fecha, abre la fuente original y evita cadenas, audios o capturas cuyo origen no puedas comprobar.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="fuentes">
+      <div class="contenedor fuentes"><div><div class="titulo-kicker">Transparencia</div><h2 style="margin:7px 0 0">Fuentes y actualización</h2><ul><li>Cada registro debe tener entidad responsable y enlace oficial.</li><li>Los datos de muestra deben sustituirse por información confirmada.</li><li>Si un dato cambia, actualiza el arreglo <strong>DATOS</strong> de este archivo.</li></ul></div><a href="#puntos">Consultar información</a></div>
+    </section>
+  </main>
+
+  <footer><div class="contenedor footer"><div><strong>Colombia Solidaria</strong><br><small>Aplicación informativa de una sola página.</small></div><small>Confirma siempre la fuente oficial antes de actuar.</small></div></footer>
+
+  <div id="modalFondo" class="modal-fondo oculto" role="dialog" aria-modal="true" aria-labelledby="modalTitulo">
+    <div class="modal"><div class="modal-top"><div><div id="modalCategoria" class="categoria"></div><h2 id="modalTitulo"></h2></div><button id="cerrar" class="cerrar" aria-label="Cerrar">✕</button></div><div id="modalContenido"></div></div>
+  </div>
+
+  <script>
+    /* ==========================================================
+       EDITA SOLO ESTA SECCIÓN PARA ACTUALIZAR LA INFORMACIÓN.
+       Al guardar y publicar nuevamente en GitHub Pages, la URL
+       seguirá siendo la misma.
+       IMPORTANTE: reemplaza los datos de demostración únicamente
+       con información confirmada por una fuente oficial.
+       ========================================================== */
+    const DATOS = [
+      {
+        id: 1,
+        categoria: "Punto de acopio",
+        departamento: "Bogotá D. C.",
+        ciudad: "Bogotá",
+        nombre: "Punto de acopio Usaquén",
+        direccion: "Calle 161A #7F-55",
+        horario: "8:00 a. m. a 9:00 p. m.",
+        recibe: ["Agua", "Alimentos no perecederos", "Elementos de higiene", "Cobijas"],
+        estado: "Verificado",
+        verificado: "11 de agosto de 2026, 10:45 a. m.",
+        fuente: "Fuente oficial por confirmar en la versión publicada",
+        enlace: "",
+        nota: "Confirma el horario y los elementos solicitados antes de desplazarte."
+      },
+      {
+        id: 2,
+        categoria: "Punto de acopio",
+        departamento: "Bogotá D. C.",
+        ciudad: "Bogotá",
+        nombre: "Centro Comercial Unicentro",
+        direccion: "Carrera 15 #124-30",
+        horario: "8:00 a. m. a 9:00 p. m.",
+        recibe: ["Agua", "Alimentos", "Pañales"],
+        estado: "Verificado",
+        verificado: "11 de agosto de 2026, 10:30 a. m.",
+        fuente: "Fuente oficial por confirmar en la versión publicada",
+        enlace: "",
+        nota: "Información de demostración. Verifica la publicación oficial vigente."
+      },
+      {
+        id: 3,
+        categoria: "Donación de sangre",
+        departamento: "Bogotá D. C.",
+        ciudad: "Bogotá",
+        nombre: "Banco Distrital de Sangre",
+        direccion: "Carrera 32 #12-81",
+        horario: "Confirma el horario antes de desplazarte",
+        recibe: ["Donantes aptos según valoración sanitaria"],
+        estado: "Actualizado",
+        verificado: "11 de agosto de 2026, 9:45 a. m.",
+        fuente: "Fuente oficial por confirmar en la versión publicada",
+        enlace: "",
+        nota: "La aceptación de una donación depende de la valoración del personal sanitario."
+      },
+      {
+        id: 4,
+        categoria: "Reporte de desaparecidos",
+        departamento: "Colombia",
+        ciudad: "Cobertura nacional",
+        nombre: "Canal nacional de orientación",
+        direccion: "Atención telefónica y digital",
+        horario: "Consulta disponibilidad en el canal oficial",
+        recibe: ["Foto reciente", "Último lugar conocido", "Datos de contacto"],
+        estado: "Verificado",
+        verificado: "11 de agosto de 2026, 9:20 a. m.",
+        fuente: "Fuente oficial por confirmar en la versión publicada",
+        enlace: "",
+        nota: "No publiques documentos de identidad ni información clínica en espacios públicos."
+      },
+      {
+        id: 5,
+        categoria: "Donación de dinero",
+        departamento: "Colombia",
+        ciudad: "Cobertura nacional",
+        nombre: "Campaña humanitaria oficial",
+        direccion: "Canal digital",
+        horario: "Disponible según la entidad",
+        recibe: ["Aportes económicos por canal oficial"],
+        estado: "Actualizado",
+        verificado: "Pendiente de confirmación oficial",
+        fuente: "Agrega aquí la entidad y su enlace oficial",
+        enlace: "",
+        nota: "No transfieras dinero a cuentas personales ni abras enlaces acortados."
+      },
+      {
+        id: 6,
+        categoria: "Emergencias",
+        departamento: "Colombia",
+        ciudad: "Cobertura nacional",
+        nombre: "Atención de emergencia",
+        direccion: "Canal oficial de emergencia de tu territorio",
+        horario: "Atención inmediata según disponibilidad del servicio",
+        recibe: ["Reportes de riesgo para la vida"],
+        estado: "Verificado",
+        verificado: "Pendiente de confirmar por territorio",
+        fuente: "Autoridad territorial correspondiente",
+        enlace: "",
+        nota: "Usa este canal únicamente cuando exista una situación de riesgo inmediato."
+      }
+    ];
+
+    const buscar = document.getElementById("buscar");
+    const categoria = document.getElementById("categoria");
+    const resultados = document.getElementById("resultados");
+    const modalFondo = document.getElementById("modalFondo");
+    const cerrar = document.getElementById("cerrar");
+
+    document.getElementById("fechaGeneral").textContent = "11 de agosto de 2026, 11:52 a. m.";
+
+    const categorias = ["Todos", ...new Set(DATOS.map(d => d.categoria))];
+    categoria.innerHTML = categorias.map(c => `<option value="${c}">${c}</option>`).join("");
+
+    function escapar(texto = "") {
+      return String(texto).replace(/[&<>'"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[c]));
+    }
+
+    function obtenerFiltrados(){
+      const texto = buscar.value.toLowerCase().trim();
+      const tipo = categoria.value;
+      return DATOS.filter(d => {
+        const coincideTipo = tipo === "Todos" || d.categoria === tipo;
+        const contenido = `${d.nombre} ${d.ciudad} ${d.departamento} ${d.direccion} ${d.recibe.join(" ")} ${d.categoria}`.toLowerCase();
+        return coincideTipo && (!texto || contenido.includes(texto));
+      });
+    }
+
+    function renderizar(){
+      const datos = obtenerFiltrados();
+      if(!datos.length){resultados.innerHTML = `<div class="vacio"><strong>No encontramos resultados.</strong><br>Prueba otra ciudad, categoría o elemento.</div>`;return;}
+      resultados.innerHTML = datos.map(d => `
+        <article class="tarjeta">
+          <div class="tarjeta-top"><div><div class="categoria">${escapar(d.categoria)}</div><h3>${escapar(d.nombre)}</h3></div><span class="estado ${d.estado === "Actualizado" ? "actualizado" : ""}">${escapar(d.estado)}</span></div>
+          <p class="linea">📍 ${escapar(d.direccion)}, ${escapar(d.ciudad)}</p>
+          <p class="linea">🕒 ${escapar(d.horario)}</p>
+          <div class="chips">${d.recibe.map(x => `<span class="chip">${escapar(x)}</span>`).join("")}</div>
+          <div class="verificacion"><strong>Última verificación:</strong> ${escapar(d.verificado)}<br><strong>Fuente:</strong> ${escapar(d.fuente)}</div>
+          <div class="botones"><button class="btn btn-principal" onclick="abrirDetalle(${d.id})">Ver detalles</button><button class="btn btn-secundario" onclick="compartir(${d.id})">Compartir</button></div>
+        </article>`).join("");
+    }
+
+    function abrirDetalle(id){
+      const d = DATOS.find(x => x.id === id); if(!d) return;
+      document.getElementById("modalCategoria").textContent = d.categoria;
+      document.getElementById("modalTitulo").textContent = d.nombre;
+      const enlace = d.enlace ? `<a class="btn btn-principal" href="${escapar(d.enlace)}" target="_blank" rel="noopener noreferrer">Abrir fuente oficial</a>` : `<span class="btn btn-secundario">Enlace oficial pendiente</span>`;
+      document.getElementById("modalContenido").innerHTML = `<div class="detalle"><strong>Ubicación:</strong> ${escapar(d.direccion)}, ${escapar(d.ciudad)}<br><strong>Departamento:</strong> ${escapar(d.departamento)}<br><strong>Horario:</strong> ${escapar(d.horario)}<br><strong>Estado:</strong> ${escapar(d.estado)}<br><strong>Última verificación:</strong> ${escapar(d.verificado)}<br><strong>Fuente:</strong> ${escapar(d.fuente)}<br><strong>Se relaciona con:</strong> ${d.recibe.map(escapar).join(", ")}</div><div class="nota">⚠ ${escapar(d.nota)}</div><div class="botones">${enlace}<button class="btn btn-secundario" onclick="compartir(${d.id})">Compartir</button></div>`;
+      modalFondo.classList.remove("oculto");
+      document.body.style.overflow = "hidden";
+    }
+
+    function cerrarModal(){modalFondo.classList.add("oculto");document.body.style.overflow="";}
+    cerrar.addEventListener("click",cerrarModal);
+    modalFondo.addEventListener("click",e=>{if(e.target===modalFondo)cerrarModal()});
+    document.addEventListener("keydown",e=>{if(e.key==="Escape")cerrarModal()});
+
+    async function compartir(id){
+      const d = DATOS.find(x => x.id === id); if(!d) return;
+      const texto = `${d.nombre}\n${d.direccion}, ${d.ciudad}\nHorario: ${d.horario}\nVerificado: ${d.verificado}`;
+      try{
+        if(navigator.share){await navigator.share({title:d.nombre,text:texto,url:location.href});}
+        else{await navigator.clipboard.writeText(`${texto}\n${location.href}`);alert("Información copiada para compartir.");}
+      }catch(e){/* La persona canceló o el navegador no permitió compartir. */}
+    }
+
+    buscar.addEventListener("input",renderizar);
+    categoria.addEventListener("change",renderizar);
+    document.querySelectorAll(".accion").forEach(b=>b.addEventListener("click",()=>{categoria.value=b.dataset.filtro;renderizar();document.getElementById("puntos").scrollIntoView({behavior:"smooth"});}));
+    renderizar();
+  </script>
+</body>
+</html>
